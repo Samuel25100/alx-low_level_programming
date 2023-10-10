@@ -5,8 +5,8 @@
  */
 int main(void)
 {
-	int x, z, inc;
-	unsigned int y;
+	int inc;
+	unsigned long y, x, z;
 
 	x = 1;
 	z = 0;
@@ -15,7 +15,7 @@ int main(void)
 	y = x + z;
 	z = x;
 	x = y;
-	printf("%d ,", y);
+	printf("%lu, ", y);
 	}
 	printf("\n");
 	return (0);
