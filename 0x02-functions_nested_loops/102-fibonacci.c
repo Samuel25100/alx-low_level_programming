@@ -17,6 +17,6 @@ int main(void)
 	x = y;
 	printf("%d ,", y);
 	}
-	printf('\n');
+	printf("\n");
 	return (0);
 }
