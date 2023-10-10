@@ -16,7 +16,7 @@ int main(void)
 	z = x;
 	x = y;
 	printf("%lu", y);
-	if (inc != 50)
+	if (inc != 49)
 	{
 	printf(", ");
 	}
