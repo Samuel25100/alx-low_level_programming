@@ -15,7 +15,11 @@ int main(void)
 	y = x + z;
 	z = x;
 	x = y;
-	printf("%lu, ", y);
+	printf("%lu", y);
+	if (inc != 50)
+	{
+	printf(", ");
+	}
 	}
 	printf("\n");
 	return (0);
