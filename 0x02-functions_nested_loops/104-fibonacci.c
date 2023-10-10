@@ -15,7 +15,7 @@ int main(void)
 	y = x + z;
 	z = x;
 	x = y;
-	printf("%lu", y);
+	printf("%f", y);
 	if (inc != 99)
 	{
 	printf(", ");
