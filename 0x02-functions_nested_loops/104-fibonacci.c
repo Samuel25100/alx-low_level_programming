@@ -6,7 +6,7 @@
 int main(void)
 {
 	int inc;
-	unsigned long y, x, z;
+	double y, x, z;
 
 	x = 1;
 	z = 0;
