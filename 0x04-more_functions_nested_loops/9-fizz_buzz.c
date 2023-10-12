@@ -11,18 +11,22 @@ int main(void)
 	{
 	if (!(x % 5) && !(x % 3))
 	{
-	printf("FizzBuzz ");
+	printf(" FizzBuzz");
 	}
 	else if (!(x % 5))
 	{
-	printf("Buzz ");
+	printf(" Buzz");
 	}
 	else if (!(x % 3))
 	{
-	printf("Fizz ");
+	printf(" Fizz");
+	}
+	else if (x == 1)
+	{
+	printf("%d", x);
 	}
 	else
-	printf("%d ",x);
+	printf(" %d", x);
 	}
 	putchar('\n');
 	return (0);
