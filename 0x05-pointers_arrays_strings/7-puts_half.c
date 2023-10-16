@@ -6,14 +6,16 @@
  */
 int _strlen(char *s)
 {
-	int x;
+	int x,y;
 
 	x = 0;
+	y = 1;
 	while (*(s + x))
 	{
 	x++;
+	y++;
 	}
-	return (x);
+	return (y);
 }
 /**
  * puts_half - print half of the string
@@ -24,7 +26,7 @@ void puts_half(char *str)
 {
 	int x, y;
 
-	x = _strlen(str) + 1;
+	x = _strlen(str);
 	if (!(x / 2))
 	{
 	x = x / 2;
