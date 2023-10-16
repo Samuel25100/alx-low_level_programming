@@ -24,7 +24,15 @@ void puts_half(char *str)
 {
 	int x, y;
 
-	x = (_strlen(str)) / 2;
+	x = _strlen(str);
+	if (x / 2)
+	{
+	x = x / 2;
+	}
+	else 
+	{
+	x = (x - 1) / 2;
+	}
 	for (y = 0; *(str + y); y++)
 	{
 	if (y >= x)
