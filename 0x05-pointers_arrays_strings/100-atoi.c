@@ -12,11 +12,7 @@ int _atoi(char *s)
 	{
 		if (*(s + x) == '-')
 		{
-			if (*(s + x + 1) >= 48 && *(s + x + 1) <= 57)
-			{
-			if (*(s + x) == '-')
-			sign = sign * -1;
-			}
+		sign = sign * -1;
 		}
 		if (*(s + x) >= 48 && *(s + x) <= 57)
 		{
