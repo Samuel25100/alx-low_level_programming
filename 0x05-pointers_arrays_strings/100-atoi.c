@@ -6,7 +6,8 @@
  */
 int _atoi(char *s)
 {
-	int x, y = 0, sign = 1;
+	int x, sign = 1;
+	unsigned int y;
 
 	for (x = 0; *(s + x); x++)
 	{
