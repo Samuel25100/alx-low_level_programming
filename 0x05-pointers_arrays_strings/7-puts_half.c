@@ -8,7 +8,7 @@ int _strlen(char *s)
 {
 	int x;
 
-	x = 0;
+	x = 1;
 	while (*(s + x))
 	{
 	x++;
@@ -29,7 +29,7 @@ void puts_half(char *str)
 	{
 	x = x / 2;
 	}
-	else 
+	else
 	{
 	x = (x - 1) / 2;
 	}
