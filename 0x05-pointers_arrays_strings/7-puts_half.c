@@ -27,7 +27,7 @@ void puts_half(char *str)
 	int x, y;
 
 	x = _strlen(str);
-	if (!(x / 2))
+	if (!(x % 2))
 	{
 	x = x / 2;
 	}
