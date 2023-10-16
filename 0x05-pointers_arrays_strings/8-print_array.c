@@ -10,7 +10,7 @@ void print_array(int *a, int n)
 {
 	int x;
 
-	if (n < 0)
+	if (n <= 0)
 	{
 	putchar('\n');
 	}
