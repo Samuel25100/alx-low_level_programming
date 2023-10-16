@@ -23,7 +23,7 @@ return (x);
 void rev_string(char *s)
 {
 	int x, y, z;
-	char arr[20];
+	char arr[450];
 
 	x = (_strlen(s)) - 1;
 	y = 0;
