@@ -12,9 +12,9 @@ void print_array(int *a, int n)
 
 	if (n < 0)
 	{
-	_putchar('\n');
+	putchar('\n');
 	}
-	else 
+	else
 	{
 	for (x = 0; x < n; x++)
 	{
@@ -25,5 +25,5 @@ void print_array(int *a, int n)
 	}
 	}
 	}
-	_putchar('\n');
+	putchar('\n');
 }
