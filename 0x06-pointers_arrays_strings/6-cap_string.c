@@ -29,10 +29,6 @@ char *cap_string(char *str)
 		*(str + x + 1) = *(str + x + 1) - 32;
 		}
 		}
-	if (*(str + x) == '\t')
-	{
-	*(str + x) = ' ';
-	}
 	}
 	return (str);
 }
