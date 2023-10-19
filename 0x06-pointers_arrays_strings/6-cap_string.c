@@ -22,8 +22,7 @@ char *cap_string(char *str)
 	|| *(str + x) == ')'
 	|| *(str + x) == '{'
 	|| *(str + x) == '}'
-	|| *(str + x) == '\n' 
-	|| *(str + (x - 1)) == 0)
+	|| *(str + x) == '\n')
 		{
 		if (*(str + x + 1) <= 122 && *(str + x + 1) >= 97)
 		{
