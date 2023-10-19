@@ -9,7 +9,7 @@ char *rot13(char *str)
 char ar1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 char ar2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	int x, y;
-	
+
 	for (x = 0; *(str + x); x++)
 	{
 	for (y = 0; y < 52; y++)
