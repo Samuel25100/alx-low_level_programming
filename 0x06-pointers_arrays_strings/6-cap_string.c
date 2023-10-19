@@ -10,7 +10,7 @@ char *cap_string(char *str)
 
 	for (x = 0; *(str + x); x++)
 	{
-	if (*(str + x) == ' '
+	if (*(str + x) == ''
 	|| *(str + x) == '\t'
 	|| *(str + x) == ','
 	|| *(str + x) == ';'
