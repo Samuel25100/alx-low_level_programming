@@ -10,7 +10,7 @@ char *cap_string(char *str)
 
 	for (x = 0; *(str + x); x++)
 	{
-	if (*(str + x) == ''
+	if (*(str + x) == ' '
 	|| *(str + x) == '\t'
 	|| *(str + x) == ','
 	|| *(str + x) == ';'
@@ -22,7 +22,8 @@ char *cap_string(char *str)
 	|| *(str + x) == ')'
 	|| *(str + x) == '{'
 	|| *(str + x) == '}'
-	|| *(str + x) == '\n')
+	|| *(str + x) == '\n' 
+	|| *(str + (x - 1)) == 0)
 		{
 		if (*(str + x + 1) <= 122 && *(str + x + 1) >= 97)
 		{
