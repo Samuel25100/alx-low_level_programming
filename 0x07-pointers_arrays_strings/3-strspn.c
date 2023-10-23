@@ -11,16 +11,15 @@ unsigned int _strspn(char *s, char *accept)
 	int x, y;
 	unsigned int z = 0;
 
-	for (x = 0; *(accept + x); x++)
+	for (x = 0; (s[x] >= 65 && s[x] <= 90) || (s[x] >= 97 && s[x] <= 122); x++)
 	{
-	for (y = 0; *(s + y); y++)
+	for (y = 0; *(accept + y); y++)
 	{
-	if (*(s + y) == *(accept + x))
+	if (*(accept + y) == *(s + x))
 	{
-	z = y + 1;
-	return (z);
+	z++;
 	}
-	else if (*(accept + x) == '\0')
+	else if (*(accept + y) == '\0')
 	{
 	return (z);
 	}
