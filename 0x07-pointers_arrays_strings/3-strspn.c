@@ -20,6 +20,10 @@ unsigned int _strspn(char *s, char *accept)
 	z = y + 1;
 	return (z);
 	}
+	else if (*(accept + x) == '\0')
+	{
+	return (z);
+	}
 	}
 	}
 	return (z);
