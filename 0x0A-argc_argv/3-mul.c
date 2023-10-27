@@ -1,7 +1,7 @@
 #include <stdio.h>
 int _atoi(char *s);
 /**
- * main - print result of multiplication 
+ * main - print result of multiplication
  * @argc: the number of argument
  * @argv: the array of each argument
  * Return: 0 success
