@@ -8,7 +8,7 @@ int _atoi(char *s);
  */
 int main(int argc, char *argv[])
 {
-	int y, result = 0;
+	int x, y, result = 0;
 	int coins[] = {25, 10, 5, 2, 1};
 
 	if (argc < 1)
@@ -16,15 +16,15 @@ int main(int argc, char *argv[])
 	printf("Error\n");
 	return (1);
 	}
-	y = _atoi(argv[1];
+	y = _atoi(argv[1]);
 	if (y < 0)
 	{
 	printf("0\n");
 	return (0);
 	}
-	for (j = 0; j < 5 && i >= 0; j++)
+	for (x = 0; x < 5 && y >= 0; x++)
 	{
-	for (; i >= coins[j]; i -= coins[j])
+	for (; y >= coins[x]; y -= coins[x])
 	{
 	result++;
 	}
