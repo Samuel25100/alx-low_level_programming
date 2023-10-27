@@ -1,6 +1,8 @@
 #include <stdio.h>
 /**
  * main -  prints the number of arguments passed into it
+ * @argc: num of argument
+ * @argv: array of each argument
  * Return: 0 success
  */
 int main(int argc, char *argv[])
