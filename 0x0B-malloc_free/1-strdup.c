@@ -18,8 +18,8 @@ char *_strdup(char *str)
 		return ('\0');
 	x = x + 1;
 	p = malloc(sizeof(char) * x);
-	if (p == '\0')
-		return ('\0');
+	if (p == NULL)
+		return (NULL);
 	for (x = 0; *(str + x); x++)
 	{
 	*(p + x) = *(str + x);
