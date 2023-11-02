@@ -30,9 +30,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 	for (x = 0; x < (tot - 1); x++)
 	{
-		if (x < len1)
+		if (x <= (len1 - 1))
 		*(p + x) = *(s1 + x);
-		else if (x >= len1)
+		else if (x > len1 - 1)
 		p[x] = *(s2 + (x - len1));
 	}
 	*(p + tot) = '\0';
