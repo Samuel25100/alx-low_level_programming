@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 int _atoi(char *s);
+int isNumber(char *s);
 /**
  * main - multiply two argument
  * @argv: the array of the argument
@@ -12,7 +13,12 @@ int main(int argc, char *argv[])
 	double x, y;
 	if (argc < 2)
 	{
-	printf("Error");
+	printf("Error\n");
+	exit(98);
+	}
+	if ((isNumber(argv[1])) || (isNumber(argv[2])))
+	{
+	printf("Error\n");
 	exit(98);
 	}
 	x = _atoi(argv[1]);
@@ -47,4 +53,18 @@ int _atoi(char *s)
 	}
 	y = y * sign;
 	return (y);
+}
+/**
+ * isNumber - checks if a string is a number
+ * @s: string to check
+ * Return: 1 if number, 0 if not
+ */
+int isNumber(char *s)
+{
+	int i;
+
+	for (i = 0; s[i]; i++)
+		if (s[i] < '0' || s[i] > '9')
+			return (1);
+	return (0);
 }
