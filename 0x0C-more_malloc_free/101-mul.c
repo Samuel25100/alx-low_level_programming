@@ -10,7 +10,8 @@ int isNumber(char *s);
  */
 int main(int argc, char *argv[])
 {
-	double x, y;
+	int x, y;
+
 	if (argc < 2)
 	{
 	printf("Error\n");
