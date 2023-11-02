@@ -32,8 +32,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		if (x < len1)
 		*(p + x) = *(s1 + x);
-		else (x >= len1)
-		*(p + x) = *(s2 + (x - len1));
+		else if (x >= len1)
+		p[x] = *(s2 + (x - len1));
 	}
 	*(p + tot) = '\0';
 	return (p);
