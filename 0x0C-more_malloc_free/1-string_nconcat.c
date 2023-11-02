@@ -35,6 +35,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		else
 		*(p + x) = *(s2 + (x - len1));
 	}
-	*(p + x) = '\0';
+	*(p + tot) = '\0';
 	return (p);
 }
