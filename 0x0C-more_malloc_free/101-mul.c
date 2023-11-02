@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	}
 	x = _atoi(argv[1]);
 	y = _atoi(argv[2]);
-	printf("%f\n", x * y);
+	printf("%d\n", x * y);
 	return (0);
 }
 /**
