@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	z = argv[2];
 	x = atoi(argv[1]);
 	y = atoi(argv[3]);
-	if (get_op_func(op) == NULL || z[1] != '\0')
+	if (get_op_func(z) == NULL || z[1] != '\0')
 	{
 	printf("Error\n");
 	exit(99);
