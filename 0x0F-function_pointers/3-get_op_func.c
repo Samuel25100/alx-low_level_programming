@@ -16,7 +16,7 @@ int (*get_op_func(char *s))(int a, int b)
 		{"%", op_mod},
 		{NULL, NULL},
 		};
-	while (ops[x].op)
+	while (ops[x].op != NULL)
 	{
 		if (*(ops[x].op) == *s)
 			break;
