@@ -42,5 +42,5 @@ void print_all(const char * const format, ...)
 		}
 	}
 	va_end(ap);
-	putchar('\n');
+	printf('\n');
 }
