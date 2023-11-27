@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 	exit(97);
 	}
 	file_from = open(argv[1], O_RDONLY);
-	file_to = open(argv[2], O_CREAT | O_TRUNC | O_APPEND | O_RDWR, 0664);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 		error_handler(file_from, file_to, argv);
 
 	while (bytesRead == 1024)
@@ -60,7 +60,7 @@ int main(int argc, char **argv)
 	close_err = close(file_to);
 	if (close_err == -1)
 	{
-	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 	exit(100);
 	}
 	return (0);
