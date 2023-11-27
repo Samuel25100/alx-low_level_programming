@@ -28,7 +28,7 @@ void error_handler(int file_from, int file_to, char **argv)
 int main(int argc, char **argv)
 {
 	int file_from, file_to, close_err;
-	ssize_t bytesRead, bytesWrite;
+	ssize_t bytesRead = 1024, bytesWrite;
 	char buf[1024];
 
 	if (argc != 3)
@@ -40,7 +40,8 @@ int main(int argc, char **argv)
 	file_to = open(argv[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
 
 		error_handler(file_from, file_to, argv);
-
+	while (bytesRead == 1024)
+	{
 	bytesRead = read(file_from, buf, 1024);
 	if (bytesRead == -1)
 		error_handler(-1, 0, argv);
@@ -49,6 +50,7 @@ int main(int argc, char **argv)
 	if (bytesWrite == -1)
 		error_handler(0, -1, argv);
 
+	}
 	close_err = close(file_from);
 	if (close_err == -1)
 	{
