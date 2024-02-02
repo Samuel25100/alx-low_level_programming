@@ -10,32 +10,33 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int key_int = 0;
 	hash_node_t *tmp = NULL, *zmp = NULL;
+	char *k, *val;
 
 	if (ht == NULL || !key || !value || !*key)
 		return (0);
 
+	val = strdup(value);
 	key_int = key_index((const unsigned char *)key, ht->size);
 
 	tmp = ht->array[key_int];
-	if (tmp != NULL)
-	{
 	while (tmp != NULL)
 	{
 		if (strcmp(key, tmp->key) == 0)
 		{
 		free(tmp->value);
-		tmp->value = strdup(value);
+		tmp->value = val;
 		return (1);
 		}
 	tmp = tmp->next;
 	}
-	}
+	/*if tmp is NULL or empty table*/
 	zmp = calloc(1, sizeof(hash_node_t));
 	if (zmp == NULL)
 		return (0);
 
-	zmp->key = strdup(key);
-	zmp->value = strdup(value);
+	k = strdup(key);
+	zmp->key = k;
+	zmp->value = val;
 	zmp->next = NULL;
 	ht->array[key_int] = zmp;
 	return (1);
