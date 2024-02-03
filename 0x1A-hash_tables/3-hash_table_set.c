@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+int add_node(hash_table_t *ht, const char *key, const char *value);
 /**
  * hash_table_set - add element to the hash table
  * @ht: pointer to the hash table created
@@ -8,17 +9,49 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int key_int = 0;
-	hash_node_t *tmp = NULL, *zmp = NULL;
-	char *k, *val;
+	int result;
 
 	if (ht == NULL || !key || !value || !*key)
 		return (0);
 
-	val = strdup(value);
-	key_int = key_index((const unsigned char *)key, ht->size);
+	result = add_node(ht, key, value);
+	return (result);
+}
+/**
+ * add_node - add new node
+ * @ht: the pointer to hash table
+ * @key: the key
+ * @value: value to be add in hash table
+ * Return: 1 on success else 0
+ */
+int add_node(hash_table_t *ht, const char *key, const char *value)
+{
+	hash_node_t *tmp = NULL, *zmp = NULL;
+	char *val;
+	unsigned long int key_int = 0;
 
+	key_int = key_index((const unsigned char *)key, ht->size);
+	val = strdup(value);
+	if (val == NULL)
+		return (0);
+if (ht->array[key_int] == NULL)
+{
+	zmp = calloc(1, sizeof(hash_node_t));
+	if (zmp == NULL)
+	{
+	free(val);
+	return (0);
+	}
+	zmp->key = strdup(key);
+	zmp->value = val;
+	zmp->next = NULL;
+	ht->array[key_int] = zmp;
+	return (1);
+}
 	tmp = ht->array[key_int];
+
+if (tmp != NULL)
+{
 	while (tmp != NULL)
 	{
 		if (strcmp(key, tmp->key) == 0)
@@ -27,17 +60,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		tmp->value = val;
 		return (1);
 		}
-	tmp = tmp->next;
+		if (tmp->next == NULL)
+			break;
+		tmp = tmp->next;
 	}
-	/*if tmp is NULL or empty table*/
 	zmp = calloc(1, sizeof(hash_node_t));
-	if (zmp == NULL)
-		return (0);
-
-	k = strdup(key);
-	zmp->key = k;
-	zmp->value = val;
-	zmp->next = NULL;
-	ht->array[key_int] = zmp;
+	zmp->value = tmp->value;
+	zmp->key = tmp->key;
+	tmp->value = val;
+	tmp->key = strdup(key);
+	tmp->next = zmp;
+}
 	return (1);
 }
