@@ -12,7 +12,7 @@ def island_perimeter(grid):
             if grid[x][y] == 1 and (x != 0 or y != 0):
                 peri += 4
                 if y != (len(grid[0]) - 1) and (x != (len(grid)) - 1):
-                    if grid[x + 1][y] == 1 or grid[x][y + 1] == 1):
+                    if grid[x + 1][y] == 1 or grid[x][y + 1] == 1:
                         inn += 1
                 if grid[x - 1][y] == 1 or grid[x][y - 1] == 1:
                     inn += 1
